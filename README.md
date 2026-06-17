@@ -1,4 +1,4 @@
-# AUSTRAL · Estudio Digital — Sitio web
+# APLICONC · Estudio Digital — Sitio web
 
 Sitio estático en HTML/CSS/JS puro. Sin dependencias ni build.
 
