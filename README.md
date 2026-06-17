@@ -42,3 +42,4 @@ austral/
 
 Sube el contenido de la carpeta `austral/` a `public_html` por el File Manager
 o por FTP. Listo.
+# Apliconc
