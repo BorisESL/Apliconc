@@ -14,7 +14,7 @@
   --mono:'JetBrains Mono',monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{
   background:var(--bg);
   color:var(--text);
@@ -53,13 +53,13 @@ h2{
 
 /* Firma: línea de acero */
 .steel-divider{
-  height:1px;width:100%;
-  background:linear-gradient(90deg,transparent,rgba(143,182,217,.45) 35%,rgba(201,217,234,.8) 50%,rgba(143,182,217,.45) 65%,transparent);
-  position:relative;overflow:visible;
+  height:4px;width:100%;
+  background:linear-gradient(90deg,transparent,rgba(143,182,217,.45) 35%,rgba(201,217,234,.8) 50%,rgba(143,182,217,.45) 65%,transparent) center/100% 1px no-repeat;
+  position:relative;overflow:hidden;
 }
 .steel-divider::after{
-  content:"";position:absolute;top:-1px;left:-15%;
-  width:120px;height:3px;border-radius:3px;
+  content:"";position:absolute;top:0;left:-15%;
+  width:120px;height:4px;border-radius:3px;
   background:linear-gradient(90deg,transparent,#EAF2FA,transparent);
   filter:blur(2px);
   animation:sweep 7s ease-in-out infinite;
@@ -395,8 +395,9 @@ footer{
 
 /* ---------- Responsive ---------- */
 @media (max-width:880px){
-  .hero{padding:120px 0 70px}
+  .hero{padding:120px 0 70px;min-height:auto}
   .hero-grid{grid-template-columns:1fr;gap:42px}
+  .hero-meta{margin-top:40px;margin-bottom:24px}
   .hero-panel{
     transform:none;max-width:100%;
     box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 90px -20px rgba(143,182,217,.35);
