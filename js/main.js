@@ -1,3 +1,7 @@
+// Marca que el JS está activo (habilita el ocultar/revelar del CSS).
+// Si este archivo falla en cargar, los .reveal quedan visibles por defecto.
+document.documentElement.classList.add('js');
+
 // Año dinámico
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -29,6 +33,8 @@ const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  const btn = form.querySelector('[type="submit"]');
+  btn.disabled = true;
   status.textContent = 'Enviando…';
   try {
     const res = await fetch(form.action, {
@@ -44,5 +50,7 @@ form.addEventListener('submit', async (e) => {
     }
   } catch {
     status.textContent = 'No se pudo enviar. Escríbenos por correo o WhatsApp.';
+  } finally {
+    btn.disabled = false;
   }
 });
