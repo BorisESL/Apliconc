@@ -5,24 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>APLICONC · Estudio Digital — Apps, sitios web y plataformas a medida</title>
 <meta name="description" content="Apliconc digital en Concepción, Chile. Desarrollamos sitios web, aplicaciones Android y plataformas a medida para hacer crecer tu negocio.">
+<meta name="theme-color" content="#0C0E12">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://borisesl.github.io/apliconc/">
 
-<!-- Favicon (coloca tus archivos en img/) -->
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon1.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon1.png">
-<link rel="apple-touch-icon" href="img/favicon1.png">
+<!-- Open Graph / redes sociales -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Apliconc Estudio Digital">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="APLICONC · Estudio Digital — Apps, sitios web y plataformas a medida">
+<meta property="og:description" content="Apliconc digital en Concepción, Chile. Desarrollamos sitios web, aplicaciones Android y plataformas a medida para hacer crecer tu negocio.">
+<meta property="og:url" content="https://borisesl.github.io/apliconc/">
+<meta property="og:image" content="https://borisesl.github.io/apliconc/img/og-image.png">
+<meta property="og:image:alt" content="Apliconc Estudio Digital">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APLICONC · Estudio Digital — Apps, sitios web y plataformas a medida">
+<meta name="twitter:description" content="Apliconc digital en Concepción, Chile. Desarrollamos sitios web, aplicaciones Android y plataformas a medida para hacer crecer tu negocio.">
+<meta name="twitter:image" content="https://borisesl.github.io/apliconc/img/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/styles.css">
+
+<!-- Datos estructurados: negocio local -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Apliconc Estudio Digital",
+  "description": "Desarrollo de sitios web, aplicaciones Android y plataformas a medida en Concepción, Chile.",
+  "url": "https://borisesl.github.io/apliconc/",
+  "image": "https://borisesl.github.io/apliconc/img/og-image.png",
+  "email": "boris.salgadolorca@gmail.com",
+  "telephone": "+56946105924",
+  "areaServed": "CL",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Concepción",
+    "addressRegion": "Biobío",
+    "addressCountry": "CL"
+  },
+  "sameAs": [
+    "https://github.com/BorisESL"
+  ]
+}
+</script>
 </head>
 <body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <header>
   <div class="wrap nav">
     <a href="#" class="logo">
-      <!-- Reemplaza el texto por tu logo: <img src="img/logo.svg" alt="AUSTRAL" height="28"> -->
       Apliconc <span>Estudio Digital</span>
     </a>
     <nav class="nav-links" id="navLinks">
@@ -31,11 +73,13 @@
       <a href="#proceso">Proceso</a>
       <a href="#contacto" class="nav-cta">Cotiza tu proyecto</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Abrir menú">
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
+
+<main id="contenido">
 
 <!-- HERO -->
 <section class="hero">
@@ -61,7 +105,10 @@
     <div class="hero-panel" aria-hidden="true">
       <div class="panel-bar"><i></i><i></i><i></i></div>
       <div class="panel-logo">
-        <img src="img/logo_tarjeta1.png" alt="Apliconc">
+        <picture>
+          <source srcset="img/logo_tarjeta1.webp" type="image/webp">
+          <img src="img/logo_tarjeta1.png" alt="Apliconc" width="600" height="400" decoding="async" fetchpriority="high">
+        </picture>
       </div>
       <div class="panel-row">Sitio web corporativo <span class="tag">EN LÍNEA</span></div>
       <div class="panel-row">App Android · Streaming <span class="tag">v2.4</span></div>
@@ -116,7 +163,7 @@
 </section>
 
 <!-- PROYECTOS -->
-<section class="section" id="proyectos" style="padding-top:30px">
+<section class="section" id="proyectos">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Proyectos</div>
@@ -237,6 +284,8 @@
     </form>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap foot">

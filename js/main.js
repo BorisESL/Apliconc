@@ -3,15 +3,22 @@
 document.documentElement.classList.add('js');
 
 // Año dinámico
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Menú móvil
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
-burger.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => navLinks.classList.remove('open'))
-);
+if (burger && navLinks) {
+  const setMenu = (open) => {
+    navLinks.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  };
+  burger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+  navLinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => setMenu(false))
+  );
+}
 
 // Reveal on scroll
 const io = new IntersectionObserver(entries => {
@@ -26,12 +33,12 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 // Ticker infinito (duplicar contenido)
 const ticker = document.getElementById('ticker');
-ticker.innerHTML += ticker.innerHTML;
+if (ticker) ticker.innerHTML += ticker.innerHTML;
 
 // Envío del formulario sin recargar
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
-form.addEventListener('submit', async (e) => {
+if (form && status) form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = form.querySelector('[type="submit"]');
   btn.disabled = true;

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://borisesl.github.io/apliconc/sitemap.xml
