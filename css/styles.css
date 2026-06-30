@@ -30,15 +30,6 @@ img{max-width:100%;display:block}
 
 /* ---------- Utilidades ---------- */
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-/* Skip link: invisible hasta recibir foco por teclado */
-.skip-link{
-  position:absolute;left:12px;top:-60px;z-index:100;
-  background:var(--surface-2);color:var(--text);
-  border:1px solid var(--line);border-radius:8px;
-  padding:10px 16px;font-size:14px;
-  transition:top .2s;
-}
-.skip-link:focus{top:12px;outline:2px solid var(--steel);outline-offset:2px}
 .eyebrow{
   font-family:var(--mono);
   font-size:12px;
@@ -57,9 +48,6 @@ h2{
   margin:14px 0 12px;
 }
 .section{padding:110px 0}
-/* Compensa el header fijo (68px) al saltar a una sección por ancla */
-section[id]{scroll-margin-top:88px}
-#proyectos{padding-top:30px}
 .section-head{max-width:620px;margin-bottom:54px}
 .section-head p{color:var(--muted)}
 
@@ -233,6 +221,20 @@ header{
 .hero-panel::before{
   content:"";position:absolute;inset:-1px;border-radius:19px;z-index:-1;
   background:linear-gradient(140deg,rgba(201,217,234,.35),transparent 35%,transparent 70%,rgba(143,182,217,.18));
+}
+/* Reflejo diagonal sutil que cruza toda la tarjeta al hacer hover */
+.hero-panel::after{
+  content:"";position:absolute;inset:0;border-radius:18px;
+  overflow:hidden;pointer-events:none;
+  background:linear-gradient(38deg,transparent 40%,rgba(255,255,255,.10) 50%,transparent 60%);
+  background-size:280% 280%;
+  background-position:0% 100%;
+  opacity:0;
+  transition:opacity .3s ease,background-position .8s ease;
+}
+.hero-panel:hover::after{
+  opacity:1;
+  background-position:100% 0%;
 }
 .panel-bar{display:flex;gap:7px;margin-bottom:20px}
 .panel-bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
